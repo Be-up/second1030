@@ -1,30 +1,34 @@
 const { defineConfig } = require('@vue/cli-service')
-// const { resolve } = require('core-js/fn/promise')
-const path=require('path')
-function resolve(dir){
-  return path.join(__dirname,dir)
-}
-
 module.exports = defineConfig({
   lintOnSave: false,
   transpileDependencies: true,
-  //
-  /* configureWebpack:{
-    resolve:{
-      alias:{
-        'S':resolve('src')
+  resolve:{
+    alias: {//配置路径别名//在vue中@默认代表src
+      //配置后我们调用assets目录下的某个文件，可以直接通过'assets/该文件名'
+      'assets': '@/assets',
+      'common': '@/common',
+      'components': '@/components',
+      'network': '@/network',
+      'views': '@/views',
+      // 'sas': '@/assets/static'
+    }
+  }
+}
+)
+
+/* module.exports = {
+  lintOnSave: false,
+  configureWebpack: {
+      resolve: {
+        alias: {//配置路径别名//在vue中@默认代表src
+          //配置后我们调用assets目录下的某个文件，可以直接通过'assets/该文件名'
+          'assets': '@/assets',
+          'common': '@/common',
+          'components': '@/components',
+          'network': '@/network',
+          'views': '@/views',
+          // 'sas': '@/assets/static'
+        }
       }
     }
   } */
- /*  chainWebpack: config => {
-    config.resolve.alias
-     .set('@', resolve('src'))
-     .set('assets', resolve('src/assets'))
-     .set('components', resolve('src/components'))
-     .set('layout', resolve('src/layout'))
-   } */
-   /* chainWebpack: config => {
-    config.resolve.alias
-     .set('S', resolve('src'))
-   } */
-})

@@ -1,64 +1,15 @@
 <template>
   <div id="app">
-    <tab-bar>
-      <tab-bar-item path="/home" activeColor="pink">
-        <template v-slot:item-icon="{dataIcon}">
-          <span :class="dataIcon[0].s"></span>
-        </template>
-        <template v-slot:item-icon-active="{dataIcon}">
-          <span :class="dataIcon[1].s"></span>
-        </template>
-        <template v-slot:item-text>
-          <div>首页</div>
-        </template>
-      </tab-bar-item>
-      <!--  -->
-      <tab-bar-item path="/category" activeColor="#057aee">
-        <template v-slot:item-icon="{dataIcon}">
-          <span :class="dataIcon[0].f"></span>
-        </template>
-        <template v-slot:item-icon-active="{dataIcon}">
-          <span :class="dataIcon[1].f"></span>
-        </template>
-        <template v-slot:item-text>
-          <div>分类</div>
-        </template>
-      </tab-bar-item>
-      <!--  -->
-      <tab-bar-item path="/cart" activeColor="#41ba84">
-        <template v-slot:item-icon="{dataIcon}">
-          <span :class="dataIcon[0].g"></span>
-        </template>
-        <template v-slot:item-icon-active="{dataIcon}">
-          <span :class="dataIcon[1].g"></span>
-        </template>
-        <template v-slot:item-text>
-          <div>购物车</div>
-        </template>
-      </tab-bar-item>
-      <!--  -->
-      <tab-bar-item path="/profile">
-        <template v-slot:item-icon="{dataIcon}">
-          <span :class="dataIcon[0].w"></span>
-        </template>
-        <template v-slot:item-icon-active="{dataIcon}">
-          <span :class="dataIcon[1].w"></span>
-        </template>
-        <template v-slot:item-text>
-          <div>我的</div>
-        </template>
-      </tab-bar-item>
-    </tab-bar>
+    <main-tab-bar></main-tab-bar>
   <router-view/>
-  <img src='~@/_spring_07.jpg'>
   <p><button @click="send">点击发送数据</button></p>
   <p><button @click="sendM">点击发送Commit数据</button></p>
+  <h1>666</h1>
   </div>
 </template>
 
 <script>
-import TabBar from './components/tabbar/TabBar.vue';
-import TabBarItem from './components/tabbar/TabBarItem.vue';
+import MainTabBar from "@/components/MainTabBar.vue"
 export default {
   name: "App",
   data() {
@@ -66,8 +17,7 @@ export default {
       active: "",
     };
   },
-
-  components: {TabBar,TabBarItem},
+  components: {MainTabBar},
   methods: {
     send(){
       // this.$store.dispatch('Add',"hello")
@@ -90,5 +40,6 @@ export default {
 </script>
 
 <style>
-
+/* @import '@/assets/static/css/base.css' */
+@import 'assets/css/base.css'
 </style>
