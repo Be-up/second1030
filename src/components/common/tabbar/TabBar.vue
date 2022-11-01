@@ -30,7 +30,8 @@ export default {
 .tab-bar{
   height: 49px;
   display:flex;
-  justify-content: center;
+  /* justify-content: center; */
+  /* justify-content: space-around; */
   /* align-items: center; */
   background-color: #f6f6f6;
   box-shadow: 0 -2px 2px rgba(100,100,100,0.1);
@@ -38,5 +39,6 @@ export default {
   left: 0;
   right:0;
   bottom:0;
+  z-index: 10;
 }
 </style>

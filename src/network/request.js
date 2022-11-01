@@ -32,7 +32,7 @@ import axios from "axios"
     return new Promise((resolve,reject)=>{
         const newInstance=axios.create({
             // baseURL:'http://666:8000',
-            baseURL:'http://666/api/hy66',
+           
             timeout:5000
         })
         newInstance(config).then(res=>{
@@ -46,7 +46,7 @@ import axios from "axios"
 export function request(config){
         const newInstance=axios.create({
             // baseURL:'http://666:8000',
-            baseURL:'http://666/api/hy66',
+            
             timeout:5000
         })
         //请求响应拦截器
@@ -59,10 +59,33 @@ export function request(config){
         }
         )
         newInstance.interceptors.response.use(res=>{
-            return res
+            return res.data
         },err=>{
             return new Promise(()=>{})
         }
         )
         return newInstance(config)
+}
+export function requestGoods(config){
+    const newInstance=axios.create({
+        // baseURL:'http://666:8000',
+       
+        timeout:5000
+    })
+    //请求响应拦截器
+    newInstance.interceptors.request.use(config=>{
+        return config
+        // return new Error('错错')
+    },err=>{
+        console.log(err)
+        return new Promise(()=>{})
+    }
+    )
+    newInstance.interceptors.response.use(res=>{
+        return res.data
+    },err=>{
+        return new Promise(()=>{})
+    }
+    )
+    return newInstance(config)
 }

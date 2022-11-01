@@ -2,14 +2,14 @@
   <div id="app">
     <main-tab-bar></main-tab-bar>
   <router-view/>
-  <p><button @click="send">点击发送数据</button></p>
-  <p><button @click="sendM">点击发送Commit数据</button></p>
-  <h1>666</h1>
+  <!-- <p><button @click="send">点击发送数据</button></p> -->
+  <!-- <p><button @click="sendM">点击发送Commit数据</button></p> -->
+  <!-- <h1>666</h1> -->
   </div>
 </template>
 
 <script>
-import MainTabBar from "@/components/MainTabBar.vue"
+import MainTabBar from "@/components/content/mainTabbar/MainTabBar.vue"
 export default {
   name: "App",
   data() {
